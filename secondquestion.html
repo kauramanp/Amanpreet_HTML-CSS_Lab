@@ -3,29 +3,138 @@
 
 <head>
     <style>
-        .barAnim {
-            height: 100px;
-            width: 50px;
-            animation-duration: 10s;
-            animation-name: riseDrop;
-            animation-delay: 2s;
-            animation-iteration-count: infinite;
-        }
-
         @keyframes riseDrop {
             from {
-                background-color: black;
+                transform: translateY(100%);
             }
 
             to {
-                background-color: white;
+                transform: translateY(70%);
             }
+        }
+
+        @keyframes riseDrop1 {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(60%);
+            }
+        }
+
+        @keyframes riseDrop2 {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(20%);
+            }
+        }
+
+        .bar {
+            width: 50px;
+            height: 300px;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .progress {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            animation-duration: 10s;
+            animation-name: riseDrop;
+            animation-delay: 1s;
+            animation-iteration-count: initial;
+        }
+
+
+        .progress1 {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            animation-duration: 10s;
+            animation-name: riseDrop1;
+            animation-delay: 1s;
+            animation-iteration-count: initial;
+        }
+
+        .progress2 {
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            animation-duration: 10s;
+            animation-name: riseDrop2;
+            animation-delay: 1s;
+            animation-iteration-count: initial;
+        }
+
+        .parent {
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            background-color: gainsboro;
+            padding: 20px;
+            align-items: center;
+        }
+
+
+
+        .parentColumn {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            background-color: gainsboro;
+            padding: 20px;
+        }
+
+        .column {
+            margin-right: 20px;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        span {
+            align-items: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="barAnim"></div>
+    <div class="parentColumn">
+        <div class="parent">
+            <div class="column">
+                <div class="bar">
+                    <div class="progress"></div>
+
+                </div>
+                <p>30%</p>
+            </div>
+
+            <div class="column">
+                <div class="bar">
+                    <div class="progress1"></div>
+                </div>
+                <p>40%</p>
+            </div>
+
+            <div class="column">
+                <div class="bar">
+                    <div class="progress2"></div>
+                </div>
+                <p>80%</p>
+            </div>
+
+        </div>
+        <h1>Bar Plot</h1>
+    </div>
+
+
 </body>
 
 <body>
